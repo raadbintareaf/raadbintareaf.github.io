@@ -1,104 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Raad Bin Tareaf – Academic Profile</title>
-  <meta name="description" content="Raad Bin Tareaf – Data Scientist, Lecturer, and Researcher in AI, Digitalization, and Society.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <title>Prof. Dr. Raad Bin Tareaf – Data Science & AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Prof. Dr. Raad Bin Tareaf — Professor of Data Science & AI. Research: LLMs, XAI, social computing, resilient infrastructure. Publications, projects, teaching, and contact." />
 
-  <!-- Schema.org Metadata for Google -->
+  <!-- Open Graph / Twitter for rich previews -->
+  <meta property="og:title" content="Prof. Dr. Raad Bin Tareaf – Data Science & AI" />
+  <meta property="og:description" content="Professor of Data Science & AI. Research: LLMs, XAI, social computing, resilient infrastructure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://raadbintareaf.github.io/" />
+  <meta property="og:image" content="https://raadbintareaf.github.io/profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema.org: Person (helps Google build/augment your Knowledge Graph entry) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Raad Bin Tareaf",
-    "jobTitle": "Data Scientist & Lecturer",
+    "alternateName": "Prof. Dr. Raad Bin Tareaf",
+    "jobTitle": "Professor of Data Science",
     "affiliation": {
       "@type": "Organization",
-      "name": "WZB Berlin Social Science Center"
+      "name": "XU Exponential University of Applied Sciences (Potsdam, Germany)"
     },
-    "url": "https://raadlastname.github.io",
+    "alumniOf": [
+      {"@type":"CollegeOrUniversity","name":"Hasso Plattner Institute / University of Potsdam","sameAs":"https://hpi.de/en/"}
+    ],
+    "image": "https://raadbintareaf.github.io/profile.jpg",
+    "url": "https://raadbintareaf.github.io/",
+    "email": "mailto:raad.bintareaf@gmail.com",
     "sameAs": [
       "https://scholar.google.com/citations?user=UIjWXEcAAAAJ&hl=en",
       "https://dblp.org/pid/213/0620.html",
       "https://www.scopus.com/authid/detail.uri?authorId=57201689814",
       "https://orcid.org/0000-0002-2804-3243",
       "https://www.researchgate.net/profile/Raad-Bin-Tareaf?ev=hdr_xprf",
-      "https://www.wzb.eu/de/forschung/digitalisierung-und-gesellschaftlicher-wandel/globalisierung-arbeit-und-produktion/projekte/fairwork-germany",
+      "https://www.wzb.eu/en/research/digitalization-and-societal-transformation/globalization-work-and-production/projects/fairwork-germany",
       "https://fair.work/en/fw/about/people/raad-bin-tareaf/",
-      "http://resiliente-infrastruktur.de/en/",
-      "https://dl.acm.org/doi/proceedings/10.1145/3651671",
-      "http://www.scitoday.cn/meeting/info-3318.aspx"
+      "https://resiliente-infrastruktur.de/en/",
+      "https://dl.acm.org/doi/proceedings/10.1145/3651671"
     ]
   }
   </script>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px auto;
-      max-width: 900px;
-      line-height: 1.6;
-      color: #333;
-    }
-    h1, h2 {
-      color: #004080;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .section {
-      margin-bottom: 30px;
-    }
+    :root { --ink:#0b2239; --muted:#5b6b7a; --accent:#0e6cff; --bg:#f7fbff; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    header{max-width:1100px;margin:0 auto;padding:48px 20px;display:grid;grid-template-columns:140px 1fr;gap:24px;align-items:center}
+    header img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:3px solid white;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+    h1{margin:0;font-size:34px;line-height:1.2}
+    .subtitle{color:var(--muted);margin-top:6px}
+    .links a{margin-right:12px}
+    main{max-width:1100px;margin:0 auto;padding:12px 20px 60px}
+    section{background:#fff;border-radius:16px;box-shadow:0 8px 28px rgba(16,24,40,.08);padding:24px;margin-top:20px}
+    section h2{margin:0 0 10px 0;font-size:22px}
+    ul{margin:8px 0 0 18px}
+    li{margin:6px 0}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .badge{display:inline-block;border:1px solid #e7eef7;border-radius:999px;padding:4px 10px;margin:4px 6px 0 0;color:#1f3b57;background:#f4f8ff;font-size:12px}
+    footer{max-width:1100px;margin:24px auto 60px auto;padding:0 20px;color:var(--muted);font-size:14px}
+    @media (max-width:800px){header{grid-template-columns:1fr} header img{justify-self:center}}
   </style>
 </head>
 <body>
 
-  <h1>Raad Bin Tareaf</h1>
-  <p><strong>Data Scientist & Lecturer</strong><br>
-  Affiliation: WZB Berlin Social Science Center</p>
-
-  <div class="section">
-    <h2>📚 Academic Profiles</h2>
-    <ul>
-      <li><a href="https://scholar.google.com/citations?user=UIjWXEcAAAAJ&hl=en">Google Scholar</a></li>
-      <li><a href="https://dblp.org/pid/213/0620.html">DBLP</a></li>
-      <li><a href="https://www.scopus.com/authid/detail.uri?authorId=57201689814">Scopus</a></li>
-      <li><a href="https://orcid.org/0000-0002-2804-3243">ORCID</a></li>
-      <li><a href="https://www.researchgate.net/profile/Raad-Bin-Tareaf?ev=hdr_xprf">ResearchGate</a></li>
-    </ul>
+<header>
+  <img src="profile.jpg" alt="Portrait of Prof. Dr. Raad Bin Tareaf" />
+  <div>
+    <h1>Prof. Dr. Raad Bin Tareaf</h1>
+    <div class="subtitle">Professor of Data Science — XU Exponential University of Applied Sciences, Potsdam</div>
+    <div class="links" aria-label="academic profiles">
+      <a href="https://scholar.google.com/citations?user=UIjWXEcAAAAJ&hl=en">Google Scholar</a> ·
+      <a href="https://dblp.org/pid/213/0620.html">DBLP</a> ·
+      <a href="https://www.scopus.com/authid/detail.uri?authorId=57201689814">Scopus</a> ·
+      <a href="https://orcid.org/0000-0002-2804-3243">ORCID</a> ·
+      <a href="https://www.researchgate.net/profile/Raad-Bin-Tareaf?ev=hdr_xprf">ResearchGate</a>
+    </div>
+    <div class="badge">LLMs</div><div class="badge">Explainable AI</div><div class="badge">Social Computing</div><div class="badge">Resilient Infrastructure</div>
   </div>
+</header>
 
-  <div class="section">
-    <h2>🌍 Research Projects & Roles</h2>
+<main>
+
+  <section id="bio">
+    <h2>About</h2>
+    <p>I am a Professor of Data Science whose work spans large language models, explainable AI, and applied machine learning with collaborations across academia, public sector, and industry. I received my Ph.D. in AI & Data Science at the Hasso Plattner Institute / University of Potsdam with the dissertation <em>“Social Media Based Personality Prediction Models”</em> (awarded <em>magna cum laude</em>). :contentReference[oaicite:2]{index=2}</p>
+    <p>Current activities include leading teaching and program design in Data Science & AI and contributing to projects on platform work governance (Fairwork) and resilient infrastructure (RITS). :contentReference[oaicite:3]{index=3}</p>
+  </section>
+
+  <section id="profiles">
+    <h2>Academic Profiles</h2>
     <ul>
-      <li><a href="https://www.wzb.eu/de/forschung/digitalisierung-und-gesellschaftlicher-wandel/globalisierung-arbeit-und-produktion/projekte/fairwork-germany">Project Leadership – WZB Fairwork Germany</a></li>
-      <li><a href="https://fair.work/en/fw/about/people/raad-bin-tareaf/">Principal Investigator – FAIRWORK Project (BMAS)</a></li>
-      <li><a href="http://resiliente-infrastruktur.de/en/">Deputy Project Manager – RITS Project</a></li>
+      <li><a href="https://scholar.google.com/citations?user=UIjWXEcAAAAJ&hl=en">Google Scholar</a> (verified profile). :contentReference[oaicite:4]{index=4}</li>
+      <li><a href="https://dblp.org/pid/213/0620.html">DBLP</a> (indexed publications).</li>
+      <li><a href="https://www.scopus.com/authid/detail.uri?authorId=57201689814">Scopus Author ID</a>.</li>
+      <li><a href="https://orcid.org/0000-0002-2804-3243">ORCID: 0000-0002-2804-3243</a>.</li>
+      <li><a href="https://www.researchgate.net/profile/Raad-Bin-Tareaf?ev=hdr_xprf">ResearchGate</a>.</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
-    <h2>📄 Publications & Proceedings</h2>
-    <ul>
-      <li><a href="https://dl.acm.org/doi/proceedings/10.1145/3651671">ACM Proceedings (ICMLC-related)</a></li>
-    </ul>
-  </div>
+  <section id="research" class="twocol">
+    <div>
+      <h2>Selected Publications</h2>
+      <ul>
+        <li>“Applying XAI in Fashion-MNIST: Evaluating Hybrid Deep Neural Networks and Capsule Networks,” <em>ACM ICMLC 2024</em>, pp. 100–107. <a href="https://dl.acm.org/doi/10.1145/3651671.3651760">DOI</a>. :contentReference[oaicite:5]{index=5}</li>
+        <li>“Accelerating Contextualization in AI Large Language Models Using Vector Databases,” <em>IEEE ICOIN 2024</em>, pp. 316–321. <a href="https://www.computer.org/csdl/proceedings-article/icoin/2024/10572088/1YhhDXMnMl2">IEEE</a>. :contentReference[oaicite:6]{index=6}</li>
+        <li>Earlier work on social-media-based personality prediction and audience attributes (IEEE/ACM). :contentReference[oaicite:7]{index=7}</li>
+      </ul>
+      <p>Full list available on <a href="https://dblp.org/pid/213/0620.html">DBLP</a> and <a href="https://scholar.google.com/citations?user=UIjWXEcAAAAJ&hl=en">Google Scholar</a>. :contentReference[oaicite:8]{index=8}</p>
+    </div>
+    <div>
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Large Language Models & Retrieval-Augmented Generation</li>
+        <li>Explainable AI for health, finance, and public sector (e.g., SHAP/LIME/Grad-CAM)</li>
+        <li>Social computing & behavioral analytics</li>
+        <li>Resilient infrastructure, digital twins, IoT, and DePIN</li>
+      </ul>
+    </div>
+  </section>
 
-  <div class="section">
-    <h2>🌐 Academic Service</h2>
-    <ul>
-      <li><a href="http://www.scitoday.cn/meeting/info-3318.aspx">Regional Chair Europe – Science Today</a></li>
-    </ul>
-  </div>
+  <section id="projects" class="twocol">
+    <div>
+      <h2>Projects & Roles</h2>
+      <ul>
+        <li><strong>Fairwork Germany</strong> — Research on working conditions in the platform economy (WZB/Oxford). <a href="https://www.wzb.eu/en/research/digitalization-and-societal-transformation/globalization-work-and-production/projects/fairwork-germany">Project page</a>. :contentReference[oaicite:9]{index=9}</li>
+        <li><strong>Fairwork (global network)</strong> — Action research, ratings and policy engagement. <a href="https://fair.work/en/fw/about/people/">People</a> · <a href="https://fair.work/en/fw/publications/the-fairwork-project-promoting-good-labor-practices-in-the-digital-platform-economy-through-action-research/">Overview</a>. :contentReference[oaicite:10]{index=10}</li>
+        <li><strong>Resilient Infrastructure Technology Suite (RITS)</strong> — Nexus of energy-water-food; digital twins, blockchain, AI (Brandenburg model region). <a href="https://resiliente-infrastruktur.de/en/">Project</a> · <a href="https://resiliente-infrastruktur.de/en/2024/12/01/project-onepager/">One-pager</a>. :contentReference[oaicite:11]{index=11}</li>
+        <li><strong>FAIRWork EU</strong> — Decision-support with digital twins for manufacturing. <a href="https://fairwork-project.eu/project/">Factsheet</a>. :contentReference[oaicite:12]{index=12}</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Recent Highlights</h2>
+      <ul>
+        <li>Best paper/presentation awards at ACM ICMLC (2023–2024). :contentReference[oaicite:13]{index=13}</li>
+        <li>Program leadership & senate roles in Data Science/AI (curriculum, accreditation). :contentReference[oaicite:14]{index=14}</li>
+      </ul>
+      <p><em>Draft review in progress:</em> “A Systematic Review of Explainable AI in Cardiovascular Disease.” (co-author). :contentReference[oaicite:15]{index=15}</p>
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2025 Raad Bin Tareaf | Last updated: October 2025</p>
-  </footer>
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <p>Master’s and Bachelor’s courses delivered include: Generative AI & LLMs; Explainable AI; Machine Learning I/II; Deep Neural Networks; Data Mining; Text Mining & IR; Algorithms & Data Structures; Big Data; Blockchain; Social Media Mining; Special Topics in AI. :contentReference[oaicite:16]{index=16}</p>
+  </section>
 
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:raad.bintareaf@gmail.com">raad.bintareaf@gmail.com</a> · LinkedIn: <a href="https://www.linkedin.com/in/raad-bin-tareaf/">/in/raad-bin-tareaf</a></p>
+    <p>For media/industry collaboration, please reference project pages above (Fairwork & RITS) for current focus areas. :contentReference[oaicite:17]{index=17}</p>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="y"></span> Raad Bin Tareaf · Last updated automatically on build.
+</footer>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
