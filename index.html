@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Raad Bin Tareaf - Author details - Scopus-Style Profile</title>
+  <title>Prof. Dr. Raad Bin Tareaf | Academic Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Prof. Dr. Raad Bin Tareaf — Professor of Data Science & AI. Research: LLMs, XAI, social computing, resilient infrastructure." />
 
@@ -21,17 +21,16 @@
   </script>
 
   <style>
-    /* Scopus/Academic Database Theme Variables */
     :root { 
-      --text-main: #333333; 
-      --text-muted: #666666; 
-      --link-blue: #00569c; 
-      --link-hover: #003666;
-      --accent-orange: #ff7300;
-      --bg-main: #f5f5f5; 
+      --text-main: #1e293b; 
+      --text-muted: #64748b; 
+      --link-primary: #2563eb; 
+      --link-hover: #1d4ed8;
+      --accent: #f59e0b;
+      --bg-body: #f1f5f9; 
       --bg-panel: #ffffff;
-      --border-light: #e0e0e0;
-      --border-dark: #cccccc;
+      --border-light: #e2e8f0;
+      --border-dark: #cbd5e1;
     }
     
     html { scroll-behavior: smooth; }
@@ -39,373 +38,489 @@
     
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif; /* Standard academic database typography */
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text-main);
-      background: var(--bg-main);
-      line-height: 1.5;
-      font-size: 14px;
+      background: var(--bg-body);
+      line-height: 1.6;
+      font-size: 15px;
     }
 
     /* Top Navigation Bar */
     .global-nav {
-      background-color: #001224;
+      background-color: #0f172a;
       color: #ffffff;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: bold;
+      padding: 16px 32px;
+      font-size: 18px;
+      font-weight: 700;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .global-nav span { color: var(--accent-orange); }
+    .global-nav span { color: var(--accent); }
 
     /* Main Container Grid */
     .container {
-      max-width: 1200px;
-      margin: 24px auto;
+      max-width: 1300px;
+      margin: 32px auto;
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 24px;
-      padding: 0 20px;
+      grid-template-columns: 320px 1fr;
+      gap: 32px;
+      padding: 0 24px;
     }
 
     /* Left Sidebar: Author Details */
-    .author-sidebar {
+    .sidebar {
       background: var(--bg-panel);
       border: 1px solid var(--border-light);
-      padding: 24px;
+      border-radius: 8px;
+      padding: 32px 24px;
       height: fit-content;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 24px;
     }
     .author-photo {
       width: 100%;
       aspect-ratio: 1/1;
       object-fit: cover;
-      border: 1px solid var(--border-dark);
-      margin-bottom: 16px;
+      border-radius: 6px;
+      border: 2px solid var(--border-light);
+      margin-bottom: 20px;
     }
     .author-name {
-      font-size: 22px;
-      font-weight: bold;
-      margin: 0 0 8px 0;
-      color: #000000;
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 0 4px 0;
+      color: #0f172a;
     }
     .author-title {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      font-weight: 500;
     }
     .author-affiliation {
       font-size: 14px;
       margin-bottom: 24px;
+      padding-left: 12px;
+      border-left: 3px solid var(--link-primary);
     }
-    .author-affiliation strong { display: block; margin-bottom: 4px; }
     
     .section-label {
-      font-size: 12px;
+      font-size: 13px;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
       color: var(--text-muted);
-      font-weight: bold;
-      margin-bottom: 8px;
+      font-weight: 700;
+      margin-bottom: 12px;
       border-bottom: 1px solid var(--border-light);
-      padding-bottom: 4px;
+      padding-bottom: 6px;
+      margin-top: 24px;
     }
 
-    .profile-links-list { list-style: none; padding: 0; margin: 0 0 24px 0; }
-    .profile-links-list li { margin-bottom: 8px; }
-    .profile-links-list a {
-      color: var(--link-blue);
-      text-decoration: none;
-    }
-    .profile-links-list a:hover { text-decoration: underline; color: var(--link-hover); }
+    .profile-links { list-style: none; padding: 0; margin: 0; font-size: 14px;}
+    .profile-links li { margin-bottom: 10px; display: flex; align-items: center; }
+    .profile-links a { color: var(--link-primary); text-decoration: none; font-weight: 500; }
+    .profile-links a:hover { text-decoration: underline; color: var(--link-hover); }
 
-    .keyword-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .keyword-tag {
-      background: #f0f4f8;
-      border: 1px solid #d9e3ed;
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #f8fafc;
+      border: 1px solid var(--border-dark);
       color: var(--text-main);
-      padding: 2px 8px;
+      padding: 4px 10px;
       font-size: 12px;
-      border-radius: 3px;
+      border-radius: 4px;
+      font-weight: 500;
     }
 
-    /* Right Column: Main Content */
+    /* Right Column: Main Content & Tabs */
     .main-content {
       background: var(--bg-panel);
       border: 1px solid var(--border-light);
-      padding: 32px;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      min-height: 800px;
     }
 
-    .content-tabs {
+    /* Tab System */
+    .tabs {
       display: flex;
       border-bottom: 2px solid var(--border-light);
-      margin-bottom: 24px;
-      gap: 24px;
+      margin-bottom: 32px;
+      gap: 32px;
+      overflow-x: auto;
     }
-    .content-tabs a {
-      text-decoration: none;
-      color: var(--text-main);
+    .tab-btn {
+      background: none;
+      border: none;
       font-size: 16px;
-      font-weight: bold;
-      padding-bottom: 12px;
-      margin-bottom: -2px;
-    }
-    .content-tabs a.active, .content-tabs a:hover {
-      color: var(--link-blue);
-      border-bottom: 2px solid var(--link-blue);
-    }
-
-    .content-section { margin-bottom: 40px; }
-    .content-section h2 {
-      font-size: 18px;
-      border-bottom: 1px solid var(--border-light);
-      padding-bottom: 8px;
-      margin-bottom: 16px;
-      color: #000000;
-    }
-
-    p { margin: 0 0 16px 0; }
-
-    /* Academic List Format for Projects & Research */
-    .academic-list { display: flex; flex-direction: column; gap: 24px; }
-    .academic-item {
-      padding-bottom: 16px;
-      border-bottom: 1px dashed var(--border-light);
-    }
-    .academic-item:last-child { border-bottom: none; padding-bottom: 0; }
-    
-    .item-title {
-      font-size: 16px;
-      font-weight: bold;
-      color: var(--link-blue);
-      margin: 0 0 4px 0;
-    }
-    .item-meta {
-      font-size: 13px;
+      font-weight: 600;
       color: var(--text-muted);
-      margin-bottom: 8px;
+      padding: 0 0 12px 0;
+      margin-bottom: -2px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
     }
-    .item-abstract { font-size: 13px; line-height: 1.6; }
-    .item-links { margin-top: 8px; font-size: 13px; }
-    .item-links a {
-      color: var(--link-blue);
-      text-decoration: none;
-      margin-right: 12px;
+    .tab-btn:hover { color: var(--link-primary); }
+    .tab-btn.active {
+      color: var(--link-primary);
+      border-bottom: 2px solid var(--link-primary);
     }
+
+    .tab-content { display: none; animation: fadeIn 0.3s ease; }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Content Typography & Lists */
+    h2 { font-size: 22px; color: #0f172a; margin-top: 0; margin-bottom: 24px; }
+    h3 { font-size: 18px; color: #0f172a; margin: 0 0 8px 0; }
+    p { margin: 0 0 16px 0; color: #334155; }
+    
+    /* Academic Item Cards */
+    .academic-list { display: flex; flex-direction: column; gap: 28px; }
+    .academic-item {
+      padding: 20px;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      background: #fcfcfd;
+      border-left: 4px solid var(--link-primary);
+    }
+    .item-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; font-weight: 600; display: flex; gap: 16px; flex-wrap: wrap;}
+    .item-meta span { display: inline-flex; align-items: center; }
+    .item-desc { font-size: 14px; line-height: 1.6; color: #475569; }
+    .item-links { margin-top: 12px; font-size: 13px; font-weight: 600; }
+    .item-links a { color: var(--link-primary); text-decoration: none; margin-right: 16px; }
     .item-links a:hover { text-decoration: underline; }
 
-    /* Simple Grid for Teaching */
-    .teaching-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px 24px;
-      font-size: 13px;
+    /* Timeline specific for Education/Experience */
+    .timeline-item { position: relative; padding-left: 24px; margin-bottom: 24px; border-left: 2px solid var(--border-light); }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--link-primary);
     }
-    .teaching-grid div::before {
-      content: "•";
-      color: var(--accent-orange);
-      margin-right: 8px;
-    }
+    .timeline-date { font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
 
-    /* Footer & Counter */
-    footer {
-      max-width: 1200px;
-      margin: 0 auto 40px;
-      padding: 20px;
-      font-size: 12px;
-      color: var(--text-muted);
-      text-align: center;
-    }
-    
-    .hidden-counter-container { margin-top: 20px; }
-    .hidden-counter {
-      color: transparent; 
-      user-select: all; 
-      cursor: text;
-    }
-    .hidden-counter::selection {
-      background-color: var(--text-main);
-      color: #00ff00; 
-    }
+    /* Teaching Grid */
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; font-size: 14px; }
+    .grid-2col div::before { content: "→"; color: var(--link-primary); margin-right: 8px; font-weight: bold; }
+
+    /* Hidden Counter */
+    footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 13px; }
+    .hidden-counter { color: transparent; user-select: all; cursor: text; }
+    .hidden-counter::selection { background-color: #0f172a; color: #10b981; }
 
     @media (max-width: 900px) {
       .container { grid-template-columns: 1fr; }
-      .content-tabs { flex-wrap: wrap; gap: 12px; }
-      .teaching-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .grid-2col { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
 <div class="global-nav">
-  <div>Academic Profile <span>Database</span></div>
+  <div>Prof. Dr. Raad Bin Tareaf <span>| Academic Profile</span></div>
 </div>
 
 <div class="container">
-  <aside class="author-sidebar">
-    <img src="1652213409800.jpg" alt="Raad Bin Tareaf" class="author-photo" />
+  
+  <aside class="sidebar">
+    <img src="1652213409800.jpg" alt="Prof. Dr. Raad Bin Tareaf" class="author-photo" />
     
-    <h1 class="author-name">Bin Tareaf, Raad</h1>
-    <div class="author-title">Prof. Dr. — Professor of AI & Data Science</div>
+    <h1 class="author-name">Raad Bin Tareaf</h1>
+    <div class="author-title">Professor of AI & Data Science</div>
     
     <div class="author-affiliation">
-      <strong>XU Exponential University of Applied Sciences</strong>
+      <strong>XU Exponential University</strong><br>
       Potsdam, Germany
     </div>
 
     <div class="section-label">Connect & IDs</div>
-    <ul class="profile-links-list">
+    <ul class="profile-links">
       <li><a href="mailto:raad.bintareaf@gmail.com">raad.bintareaf@gmail.com</a></li>
-      <li><a href="https://scholar.google.com/citations?user=UIjWXEcAAAAJ&hl=en" target="_blank">Google Scholar Profile</a></li>
-      <li><a href="https://dblp.org/pid/213/0620.html" target="_blank">DBLP Record</a></li>
-      <li><a href="https://www.scopus.com/authid/detail.uri?authorId=57201689814" target="_blank">Scopus Author ID</a></li>
+      <li><a href="https://scholar.google.com/citations?user=UIjWXEcAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
+      <li><a href="https://dblp.org/pid/213/0620.html" target="_blank">DBLP</a></li>
+      <li><a href="https://www.scopus.com/authid/detail.uri?authorId=57201689814" target="_blank">Scopus</a></li>
       <li><a href="https://orcid.org/0000-0002-2804-3243" target="_blank">ORCID</a></li>
+      <li><a href="https://dl.acm.org/profile/99659235050/publications?Role=author" target="_blank">ACM Profile</a></li>
       <li><a href="https://www.researchgate.net/profile/Raad-Bin-Tareaf" target="_blank">ResearchGate</a></li>
       <li><a href="https://www.linkedin.com/in/raad-bin-tareaf/" target="_blank">LinkedIn</a></li>
     </ul>
 
-    <div class="section-label">Subject Areas</div>
-    <div class="keyword-tags">
-      <span class="keyword-tag">Large Language Models</span>
-      <span class="keyword-tag">Explainable AI</span>
-      <span class="keyword-tag">Social Computing</span>
-      <span class="keyword-tag">Resilient Infrastructure</span>
-      <span class="keyword-tag">Machine Learning</span>
+    <div class="section-label">Research Keywords</div>
+    <div class="tags">
+      <span class="tag">Large Language Models (LLMs)</span>
+      <span class="tag">Explainable AI (XAI)</span>
+      <span class="tag">Social Computing</span>
+      <span class="tag">Resilient Infrastructure</span>
+      <span class="tag">Behavioral Analytics</span>
+      <span class="tag">Sustainable AI</span>
     </div>
   </aside>
 
   <main class="main-content">
-    <div class="content-tabs">
-      <a href="#overview" class="active">Overview</a>
-      <a href="#projects">Funded Projects</a>
-      <a href="#research">Research Domains</a>
-      <a href="#teaching">Teaching</a>
+    
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab('overview')">Overview</button>
+      <button class="tab-btn" onclick="openTab('experience')">Experience</button>
+      <button class="tab-btn" onclick="openTab('education')">Education</button>
+      <button class="tab-btn" onclick="openTab('projects')">Funded Projects</button>
+      <button class="tab-btn" onclick="openTab('publications')">Publications</button>
+      <button class="tab-btn" onclick="openTab('events')">Speaking & Events</button>
     </div>
 
-    <section id="overview" class="content-section">
-      <h2>Biography</h2>
-      <p>Professor of AI and Data Science stationed at XU Exponential University of Applied Sciences in Potsdam, Germany. Research methodologies concentrate on the intersection of deep learning interpretability, distributed systems architecture, and applied real-world implementation.</p>
-      <p>Specialization areas encompass Large Language Models (LLMs), Explainable AI (XAI), and applied machine learning. Additional independent research vectors include algorithmic trading mechanisms, Web 3.0 technology integration, and the fine-tuning of LLMs utilizing cybersecurity and SIEM datasets for autonomous threat detection.</p>
-    </section>
+    <div id="overview" class="tab-content active">
+      <h2>Biography & Focus</h2>
+      <p>I am a Professor of AI and Data Science stationed at XU Exponential University of Applied Sciences in Potsdam, Germany. My research and pedagogical frameworks operate at the intersection of deep learning interpretability, distributed systems architecture, and sustainable real-world applications.</p>
+      <p>My specialization encompasses Large Language Models (LLMs), Explainable AI (XAI), and applied machine learning. Beyond academia, I actively collaborate with the public sector and industry to deploy machine learning frameworks that address critical challenges. My independent research vectors include Web 3.0 technology integration, applied behavior analysis, and the fine-tuning of LLMs utilizing cybersecurity datasets for autonomous threat detection.</p>
+      
+      <div class="section-label" style="margin-top: 32px;">Teaching & Supervision</div>
+      <p>I instruct across Bachelor’s and Master’s degree programs, bridging theoretical computer science with practical toolchains. Responsibilities include curriculum design, thesis supervision, and executive training for over 200 global professionals.</p>
+      <div class="grid-2col">
+        <div>Generative AI & LLMs</div>
+        <div>Explainable AI (XAI)</div>
+        <div>Algorithms & Data Structures</div>
+        <div>Machine Learning I & II</div>
+        <div>Deep Neural Networks</div>
+        <div>Data Mining & Big Data</div>
+        <div>Text Mining & Information Retrieval</div>
+        <div>Blockchain Technology</div>
+      </div>
+    </div>
 
-    <section id="projects" class="content-section">
+    <div id="experience" class="tab-content">
+      <h2>Academic & Industry Experience</h2>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">Feb 2022 - Present</div>
+        <h3>Professor of Data Science</h3>
+        <p><strong>XU Exponential University of Applied Sciences</strong> | Potsdam, Germany</p>
+        <p class="item-desc">Head of Bachelor and Master Programs in Data Science and AI. Active Senate Member contributing to institutional governance. Successfully led the department through ZEVA Accreditation.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Sep 2017 - Feb 2022</div>
+        <h3>Researcher in Data Science</h3>
+        <p><strong>Hasso Plattner Institute (HPI) / SAP</strong> | Potsdam, Germany</p>
+        <p class="item-desc">Integrated machine learning solutions into SAP Media and Analytics projects. Bridged the gap between theoretical research and practical industry application.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Oct 2016 - Feb 2022</div>
+        <h3>Doctoral Researcher</h3>
+        <p><strong>Hasso Plattner Institute & University of Potsdam</strong> | Germany</p>
+        <p class="item-desc">Conducted pioneering research in Machine Learning for Social Media Platforms. Organized weekly research seminars and published top-tier research in A-ranked conferences.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jan 2014 - Jul 2016</div>
+        <h3>Business Intelligence & Data Analytics Developer</h3>
+        <p><strong>Herma Engineering Services International</strong> | Amman, Jordan</p>
+        <p class="item-desc">Implemented data centers, predictive analytics, and ETL frameworks using SQL Server, Oracle, SAP, Alteryx, and Tableau.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2013 - 2014</div>
+        <h3>Software & Testing Engineer</h3>
+        <p><strong>Continental AG (Regensburg) & Robert Bosch GmbH (Stuttgart)</strong></p>
+        <p class="item-desc">Developed integration solutions for automotive platforms (OSLC) and built testing software for medicine production lines utilizing VisiWin open source tools.</p>
+      </div>
+    </div>
+
+    <div id="education" class="tab-content">
+      <h2>Education History</h2>
+      
+      <div class="academic-list">
+        <div class="academic-item">
+          <h3>Ph.D. in AI and Data Science</h3>
+          <div class="item-meta"><span>📅 2017 - 2022</span><span>📍 HPI / University of Potsdam, Germany</span></div>
+          <p class="item-desc">
+            <strong>Thesis:</strong> "Social Media Based Personality Prediction Models"<br>
+            <strong>Honor:</strong> Awarded <em>Magna Cum Laude</em>.
+          </p>
+        </div>
+
+        <div class="academic-item">
+          <h3>M.Sc. in Enterprise System Engineering</h3>
+          <div class="item-meta"><span>📅 2014 - 2016</span><span>📍 German Jordanian University & PSUT</span></div>
+          <p class="item-desc">
+            Double degree in ESE (Digital Business and Data Science). Supported by the MSC.ESE TEMPUS Joint Project Germany/Jordan.
+          </p>
+        </div>
+
+        <div class="academic-item">
+          <h3>B.Sc. in Computer Science</h3>
+          <div class="item-meta"><span>📅 2009 - 2014</span><span>📍 German Jordanian University</span></div>
+          <p class="item-desc">
+            Included a 4-semester exchange agreement at the <strong>University of Regensburg, Germany</strong> for Technical Computer Science. <br>
+            <strong>Thesis:</strong> "OSLC API Implementation for Automotive Industry" conducted at Continental AG.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="projects" class="tab-content">
       <h2>Funded Research & Major Projects</h2>
       <div class="academic-list">
         
         <div class="academic-item">
-          <h3 class="item-title">FAIRWORK Germany</h3>
-          <div class="item-meta">Collaborators: WZB Berlin, University of Oxford | Domain: Social Computing</div>
-          <div class="item-abstract">
-            An international action-research initiative analyzing the digital labor economy. The methodology utilizes computational and behavioral analytics to evaluate platform work conditions against established global fair work metrics, advancing regulatory resilience and algorithmic fairness within the gig economy.
-          </div>
+          <h3>Fairwork Germany</h3>
+          <div class="item-meta"><span>Collaborators: WZB Berlin, Univ. of Oxford</span><span>Funding: BMAS (1.0M EUR)</span></div>
+          <div class="item-desc">Internal project manager and active researcher for AI and data science tasks. Analyzing algorithmic management and workplace representation in the German platform economy.</div>
           <div class="item-links">
-            <a href="https://www.wzb.eu/de/forschung/digitalisierung-und-gesellschaftlicher-wandel/globalisierung-arbeit-und-produktion/projekte/fairwork-germany" target="_blank">WZB Project Overview ↗</a>
+            <a href="https://www.wzb.eu/de/forschung/digitalisierung-und-gesellschaftlicher-wandel/globalisierung-arbeit-und-produktion/projekte/fairwork-germany" target="_blank">WZB Overview ↗</a>
             <a href="https://fair.work/en/fw/about/people/raad-bin-tareaf/" target="_blank">Team Profile ↗</a>
           </div>
         </div>
 
         <div class="academic-item">
-          <h3 class="item-title">Resilient Infrastructure Technology Suite (RITS)</h3>
-          <div class="item-meta">Funding: Brandenburg Model Region Initiative | Domain: Digital Twins & IoT</div>
-          <div class="item-abstract">
-            Investigation into the operational nexus of energy, water, and food infrastructure grids. The project deploys digital twins, Decentralized Physical Infrastructure Networks (DePIN), and Green Swarming IoT integrated with AI to architect self-sustaining, fault-tolerant regional infrastructure systems.
-          </div>
+          <h3>Resilient Infrastructure Technology Suite (RITS)</h3>
+          <div class="item-meta"><span>Collaborators: Brandenburg Region</span><span>Funding: ILB (1.6M EUR)</span></div>
+          <div class="item-desc">Deputy Project Manager & Data Scientist exploring the nexus of energy, water, and food grids utilizing digital twins, IoT, and Blockchain to architect self-sustaining infrastructure.</div>
           <div class="item-links">
             <a href="https://resiliente-infrastruktur.de/en/" target="_blank">Project Site ↗</a>
-            <a href="https://resiliente-infrastruktur.de/en/2024/12/01/project-onepager/" target="_blank">Official One-Pager ↗</a>
           </div>
         </div>
 
         <div class="academic-item">
-          <h3 class="item-title">XAI for Medical Health Diagnostics</h3>
-          <div class="item-meta">Collaborators: Abu Dhabi University, Zayed University, MIT | Domain: Healthcare AI</div>
-          <div class="item-abstract">
-            Development of Explainable AI (XAI) frameworks calibrated for medical diagnostics. The research integrates methodologies including SHAP, LIME, and Grad-CAM to establish transparency, legal compliance, and clinical trustworthiness for AI inferences derived from cardiovascular and generalized clinical data.
-          </div>
+          <h3>XAI for Cardiovascular Risk Factors Prediction</h3>
+          <div class="item-meta"><span>Collaborators: Abu Dhabi Univ, Zayed Univ, MIT, Cleveland Clinic</span></div>
+          <div class="item-desc">Developing a hybrid Explainable Artificial Intelligence framework calibrated for medical diagnostics, ensuring transparency and clinical trustworthiness for complex AI inferences.</div>
         </div>
 
         <div class="academic-item">
-          <h3 class="item-title">Quantitative AI Voluntary Carbon Market (QAVCM) Analytics</h3>
-          <div class="item-meta">Domain: Climate Tech & Real-Time Analytics</div>
-          <div class="item-abstract">
-            Engineering of a high-fidelity analytics architecture for the quantitative, real-time evaluation of voluntary carbon market (VCM) CO₂ certificates. The system leverages AI assistance to ensure data transparency, verify ecological impacts, and algorithmically detect and mitigate greenwashing via real-time data ingestion.
-          </div>
-          <div class="item-links">
-            <a href="https://voluntarycarbon.org/team/" target="_blank">VCM Team Page ↗</a>
-          </div>
+          <h3>LLMs for Cybersecurity (Keepbit IT-SOLUTIONS)</h3>
+          <div class="item-meta"><span>Partner: Keepbit IT-SOLUTIONS GmbH</span></div>
+          <div class="item-desc">Project-based learning agreement to implement and fine-tune Large Language Models tailored specifically for cybersecurity consultants and threat analysis.</div>
         </div>
 
       </div>
-    </section>
+    </div>
 
-    <section id="research" class="content-section">
-      <h2>Core Research Domains</h2>
+    <div id="publications" class="tab-content">
+      <h2>Selected Recent Publications</h2>
+      <p style="margin-bottom: 24px;"><em>* For a comprehensive list of all publications, please visit my <a href="https://scholar.google.com/citations?user=UIjWXEcAAAAJ&hl=en" target="_blank">Google Scholar</a> or <a href="https://dl.acm.org/profile/99659235050/publications?Role=author" target="_blank">ACM Profile</a>.</em></p>
+      
       <div class="academic-list">
         <div class="academic-item">
-          <h3 class="item-title">Large Language Models & RAG</h3>
-          <div class="item-abstract">Architectural optimization, retrieval-augmented generation pipelines, and domain-specific fine-tuning, with a primary focus on cybersecurity integration and Security Information and Event Management (SIEM) data processing.</div>
+          <h3>Does Size Matter? Examining Sentence Similarity Performance in Large Language Models</h3>
+          <div class="item-meta"><span>IEEE ICOIN 2025</span><span>Chiang Mai, Thailand</span></div>
+          <div class="item-desc">Raad Bin Tareaf et al. — 39th International Conference on Information Networking.</div>
         </div>
-        <div class="academic-item">
-          <h3 class="item-title">Explainable AI (XAI)</h3>
-          <div class="item-abstract">Bridging the performance-interpretability gap in high-stakes environments. Developing methodologies to render complex neural inferences transparent for healthcare, finance, and public sector applications.</div>
-        </div>
-        <div class="academic-item">
-          <h3 class="item-title">Social Computing & Systems</h3>
-          <div class="item-abstract">Deployment of behavioral analytics and sentiment mining to measure and quantify the sociological and economic impacts of algorithmic deployment in public spaces and labor markets.</div>
-        </div>
-        <div class="academic-item">
-          <h3 class="item-title">Decentralized Systems & Digital Twins</h3>
-          <div class="item-abstract">Integration of blockchain applications, Web 3.0 infrastructure, and resilient digital twin modeling aimed at securing and optimizing critical physical resources and infrastructure.</div>
-        </div>
-      </div>
-    </section>
 
-    <section id="teaching" class="content-section">
-      <h2>Teaching & Supervision Responsibilities</h2>
-      <p>Instruction and supervision across Bachelor’s and Master’s degree programs, focusing on the synthesis of theoretical computer science and applied, industry-standard methodologies.</p>
-      <div class="teaching-grid">
-        <div>Generative AI & Large Language Models</div>
-        <div>Text Mining & Information Retrieval</div>
-        <div>Explainable AI (XAI)</div>
-        <div>Algorithms & Data Structures</div>
-        <div>Machine Learning I & II</div>
-        <div>Blockchain Applications</div>
-        <div>Deep Neural Networks</div>
-        <div>Social Media Mining</div>
-        <div>Data Mining & Big Data Analytics</div>
-        <div>Special Topics in AI Integration</div>
+        <div class="academic-item">
+          <h3>Using Machine Learning to Prioritize Forensic Artifacts in Email Evidence</h3>
+          <div class="item-meta"><span>IEEE ICOIN 2025</span><span>Chiang Mai, Thailand</span></div>
+          <div class="item-desc">Raad Bin Tareaf et al. — 39th International Conference on Information Networking.</div>
+        </div>
+
+        <div class="academic-item">
+          <h3>Applying XAI in Fashion-MNIST: Evaluating Hybrid Deep Neural Networks and Capsule Networks</h3>
+          <div class="item-meta"><span>ACM ICMLC 2024</span><span>Shenzhen, China</span></div>
+          <div class="item-desc">Raad Bin Tareaf et al. — 16th International Conference on Machine Learning and Computing. <em>*Winner of Best Research Paper Award</em>.</div>
+          <div class="item-links"><a href="https://dl.acm.org/doi/proceedings/10.1145/3651671" target="_blank">ACM Proceedings ↗</a></div>
+        </div>
+
+        <div class="academic-item">
+          <h3>Accelerating Contextualization in AI Large Language Models Using Vector Databases</h3>
+          <div class="item-meta"><span>IEEE ICOIN 2023</span></div>
+          <div class="item-desc">Raad Bin Tareaf et al. — 37th International Conference on Information Networking.</div>
+        </div>
+
+        <div class="academic-item">
+          <h3>Mining Minds: Predicting IQ Scores Using Social Media Textual Analytics</h3>
+          <div class="item-meta"><span>ACM ICMLC 2023</span></div>
+          <div class="item-desc">Raad Bin Tareaf et al. — 16th International Conference on Machine Learning and Computing.</div>
+        </div>
       </div>
-    </section>
+    </div>
+
+    <div id="events" class="tab-content">
+      <h2>Public Speaking & Professional Events</h2>
+      
+      <div class="academic-list">
+        <div class="academic-item">
+          <h3>Regional Chair for Europe</h3>
+          <div class="item-meta"><span>ACM ICMLC 2025</span></div>
+          <div class="item-desc">Serving as the European Regional Chair for the International Conference on Machine Learning and Computing.</div>
+        </div>
+
+        <div class="academic-item">
+          <h3>Inaugural Professorship Lecture</h3>
+          <div class="item-meta"><span>2022</span><span>Potsdam, Germany</span></div>
+          <div class="item-desc">Delivered lecture titled: <em>"Deepfakes for Marketing, Sales and Business Growth"</em> upon receiving professorship at XU Exponential University.</div>
+        </div>
+
+        <div class="academic-item">
+          <h3>Lead Organizer: AI for Climate Change Solutions</h3>
+          <div class="item-meta"><span>2022</span><span>International Hackathon</span></div>
+          <div class="item-desc">Organized an international hackathon bringing together global experts to formulate AI-driven solutions for climate change.</div>
+        </div>
+
+        <div class="academic-item">
+          <h3>Scientific & Organizing Committee Member</h3>
+          <div class="item-meta"><span>IEEE & ACM Conferences</span></div>
+          <div class="item-desc">
+            Active committee member for numerous conferences including:<br>
+            • IEEE ISPA/BDCloud/SocialCom/SustainCom (UK, 2019 / China, 2018)<br>
+            • ACM ICCBDC (London, 2017 & 2022)<br>
+            • XU University Sustainability and Data Science Workshop (2022 & 2023)
+          </div>
+        </div>
+      </div>
+    </div>
 
   </main>
 </div>
 
 <footer>
-  <div>Data source: GitHub Pages Local Deploy. © <span id="year"></span> Raad Bin Tareaf. All rights reserved.</div>
+  <div>Built for Academic Integrity. © <span id="year"></span> Prof. Dr. Raad Bin Tareaf. All rights reserved.</div>
   
-  <div class="hidden-counter-container">
-    <span class="hidden-counter">Total Page Views: <span id="visit-count">1,024</span></span>
+  <div style="margin-top: 20px;">
+    <span class="hidden-counter">Encrypted Hit Counter: <span id="visit-count">1,024</span></span>
   </div>
 </footer>
 
 <script>
+  // Set dynamic year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  let visits = localStorage.getItem('scopus_page_view_count');
+  // Tab switching logic
+  function openTab(tabId) {
+    // Hide all contents
+    document.querySelectorAll('.tab-content').forEach(content => {
+      content.classList.remove('active');
+    });
+    // Remove active class from buttons
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    
+    // Show selected content and activate button
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  // Hidden Local Storage Counter
+  let visits = localStorage.getItem('portfolio_view_count');
   if (!visits) {
-    visits = 1250; 
+    visits = 1450; 
   } else {
     visits = parseInt(visits) + 1;
   }
-  localStorage.setItem('scopus_page_view_count', visits);
+  localStorage.setItem('portfolio_view_count', visits);
   document.getElementById('visit-count').innerText = visits.toLocaleString();
-
-  // Simple script to make the tabs functional without reloading
-  document.querySelectorAll('.content-tabs a').forEach(tab => {
-    tab.addEventListener('click', function(e) {
-      document.querySelectorAll('.content-tabs a').forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
 </script>
 
 </body>
