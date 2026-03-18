@@ -186,6 +186,8 @@
       padding: 24px;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
     }
     .card:hover {
       transform: translateY(-4px);
@@ -193,13 +195,34 @@
     }
     .card h3 { margin: 0 0 12px 0; font-size: 18px; color: var(--ink); }
     .card-meta { font-size: 13px; color: var(--muted); margin-bottom: 12px; font-weight: 600; }
+    .card p { flex-grow: 1; } /* Pushes tags and links to the bottom */
+
+    /* Card Action Links */
+    .card-links {
+      display: flex;
+      gap: 16px;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+    .card-links a {
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .card-links a::after {
+      content: "↗";
+      margin-left: 4px;
+      font-size: 11px;
+    }
 
     /* Tags within cards */
     .tag-list {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 16px;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
     }
     .tag-list span {
       background: #f1f5f9;
@@ -244,7 +267,7 @@
       header { grid-template-columns: 1fr; text-align: center; gap: 16px; }
       header img { justify-self: center; }
       .profile-links, .badges { justify-content: center; }
-      .nav-links { display: none; /* Hide standard nav on mobile for simplicity, or implement a hamburger menu later */ }
+      .nav-links { display: none; }
     }
   </style>
 </head>
@@ -297,36 +320,49 @@
     <div class="grid-container">
       
       <div class="card">
-        <h3>XAI for Medical Health</h3>
-        <div class="card-meta">Collaboration: Abu Dhabi University, Zayed University, MIT</div>
-        <p>Developing Explainable AI (XAI) frameworks tailored for medical diagnostics. This research focuses on utilizing methodologies like SHAP, LIME, and Grad-CAM to ensure that complex AI inferences derived from clinical and cardiovascular data are transparent, legally compliant, and trustworthy for healthcare professionals.</p>
-        <div class="tag-list">
-          <span>Healthcare AI</span><span>Interpretability</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3><a href="https://fair.work/en/fw/about/people/raad-bin-tareaf/" target="_blank">FAIRWORK Germany</a></h3>
+        <h3>FAIRWORK Germany</h3>
         <div class="card-meta">Collaboration: WZB Berlin, University of Oxford</div>
         <p>An international action-research project examining the digital labor economy. We utilize computational and behavioral analytics to assess platform work conditions against global fair work principles, pushing for regulatory resilience and algorithmic fairness in the gig economy.</p>
+        <div class="card-links">
+          <a href="https://fair.work/en/fw/about/people/raad-bin-tareaf/" target="_blank">Team Profile</a>
+          <a href="https://www.wzb.eu/de/forschung/digitalisierung-und-gesellschaftlicher-wandel/globalisierung-arbeit-und-produktion/projekte/fairwork-germany" target="_blank">WZB Project Overview</a>
+        </div>
         <div class="tag-list">
           <span>Social Computing</span><span>Algorithmic Fairness</span>
         </div>
       </div>
 
       <div class="card">
-        <h3><a href="https://resiliente-infrastruktur.de/en/" target="_blank">RITS (Resilient Infrastructure)</a></h3>
+        <h3>RITS (Resilient Infrastructure)</h3>
         <div class="card-meta">Brandenburg Model Region Initiative</div>
         <p>The Resilient Infrastructure Technology Suite explores the operational nexus of energy, water, and food grids. We deploy digital twins, DePIN (Decentralized Physical Infrastructure Networks), and Green Swarming IoT combined with AI to create self-sustaining, fault-tolerant regional infrastructure.</p>
+        <div class="card-links">
+          <a href="https://resiliente-infrastruktur.de/en/" target="_blank">Project Site</a>
+          <a href="https://resiliente-infrastruktur.de/en/2024/12/01/project-onepager/" target="_blank">One-Pager</a>
+        </div>
         <div class="tag-list">
           <span>Digital Twins</span><span>DePIN</span><span>IoT</span>
         </div>
       </div>
 
       <div class="card">
-        <h3><a href="https://voluntarycarbon.org/team/" target="_blank">QAVCM</a></h3>
+        <h3>XAI for Medical Health</h3>
+        <div class="card-meta">Collaboration: Abu Dhabi University, Zayed University, MIT</div>
+        <p>Developing Explainable AI (XAI) frameworks tailored for medical diagnostics. This research focuses on utilizing methodologies like SHAP, LIME, and Grad-CAM to ensure that complex AI inferences derived from clinical and cardiovascular data are transparent, legally compliant, and trustworthy for healthcare professionals.</p>
+        <div class="card-links">
+          </div>
+        <div class="tag-list">
+          <span>Healthcare AI</span><span>Interpretability</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>QAVCM</h3>
         <div class="card-meta">Voluntary Carbon Market Analytics</div>
         <p>Designing a high-fidelity analytics system for the quantitative, AI-assisted, and real-time evaluation of voluntary carbon market (VCM) CO₂ certificates. This ensures higher transparency, tracks ecological impact verification, and mitigates greenwashing using real-time data ingestion.</p>
+        <div class="card-links">
+          <a href="https://voluntarycarbon.org/team/" target="_blank">VCM Team Page</a>
+        </div>
         <div class="tag-list">
           <span>Climate Tech</span><span>Real-Time Analytics</span>
         </div>
@@ -400,11 +436,9 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Simple Local Storage Counter logic
-  // Note: For actual global tracking on GitHub Pages, you will need a lightweight API 
-  // like GoatCounter, but this fulfills the UI requirement you asked for.
   let visits = localStorage.getItem('page_view_count');
   if (!visits) {
-    visits = 1250; // Starting baseline
+    visits = 1250; 
   } else {
     visits = parseInt(visits) + 1;
   }
